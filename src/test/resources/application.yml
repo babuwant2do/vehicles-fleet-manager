@@ -1,0 +1,13 @@
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://${MONGO_TEST_DB_HOST:localhost}:${MONGO_TEST_DB_PORT:12345}/${MONGO_TEST_DB_NAME:vehicles-fleet-manager_test_db}
+      auto-index-creation: true
+
+# Hibernate Settings
+  jpa:
+    hibernate:
+      ddl-auto: create
+      show_sql: true
+

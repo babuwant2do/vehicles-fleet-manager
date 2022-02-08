@@ -1,0 +1,355 @@
+{
+	"info": {
+		"_postman_id": "43d2a3ca-5c93-4e7a-9602-b9d4f7ac14dd",
+		"name": "VehiclesFleetManagerApplication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "XML",
+			"item": [
+				{
+					"name": "Add New Vehicles XML",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<Vehicle>\n    <name>Vheicle 001</name>\n    <vin>001</vin>\n    <licensePlateNumber>LP-001-XX</licensePlateNumber>\n    <properties>\n        <a>A</a>\n        <b>B</b>\n    </properties>\n</Vehicle>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Vehicles XML",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<Vehicle>>\n    <name>name XY</name>\n    <vin>vid001 bla</vin>\n    <licensePlateNumber>XM001dd XY</licensePlateNumber>\n    <properties>\n        <a>Axy</a>\n        <b>Bxy</b>\n        <c>Cxy</c>\n    </properties>\n</Vehicle>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle/:vin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								":vin"
+							],
+							"variable": [
+								{
+									"key": "vin",
+									"value": "vid001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Vehicles by vin XML",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/vehicle/:vin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								":vin"
+							],
+							"variable": [
+								{
+									"key": "vin",
+									"value": "001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All Vehicles - xml",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/vehicle?page=0&size=5&sort=licensePlateNumber,asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "licensePlateNumber,asc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "JSON",
+			"item": [
+				{
+					"name": "Add New Vehicles JSON",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"name1\",\n    \"vin\": \"vin001\",\n    \"licensePlateNumber\": \"XM001dd\",\n    \"properties\": {\"a\": \"A\", \"b\": \"B\"}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update Vehicles JSON",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"name\": \"name X\",\n        \"vin\": \"vid001\",\n        \"licensePlateNumber\": \"XM001dd X\",\n        \"properties\": {\n            \"a\": \"Ax\",\n            \"b\": \"Bx\",\n            \"c\": \"Cx\"\n        }\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle/:vid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								":vid"
+							],
+							"variable": [
+								{
+									"key": "vid",
+									"value": "vid001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Vehicles by vin JSON",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/vehicle/:vin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								":vin"
+							],
+							"variable": [
+								{
+									"key": "vin",
+									"value": "001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get All Vehicles - json",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/vehicle?page=0&size=10&sort=vin,asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "vin,asc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "remove  Vehicles by vin",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/vehicle/:vin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehicle",
+						":vin"
+					],
+					"variable": [
+						{
+							"key": "vin",
+							"value": "vid001"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

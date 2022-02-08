@@ -1,0 +1,17 @@
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://${MONGO_DB_HOST:localhost}:${MONGO_DB_PORT:12345}/${MONGO_DB_NAME:vehicles-fleet-manager_db}
+      auto-index-creation: true
+
+# Hibernate Settings
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show_sql: true
+#    properties:
+#      hibernate:
+#        show_sql: true
+#        use_sql_comments: false
+#        format_sql:  false
